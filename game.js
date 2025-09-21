@@ -26,7 +26,7 @@ InstagramIconImage.src = "instagram.webp"; // 後で正しいパスに変更
 const LINEIconImage = new Image();
 LINEIconImage.src = "line.jpg"; // 後で正しいパスに変更
 
-const bgm = new Audio("maou_bgm_cyber42.mp3");
+const bgm = new Audio("maou.mp3");
 bgm.loop = true;        // ループ再生
 bgm.volume = 0.2;       // 音量（0.0〜1.0）
 let bgmStarted = false;
