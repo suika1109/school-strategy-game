@@ -771,3 +771,34 @@ canvas {
         line-height: 1;
     }
 }
+
+#stageSelectScreen .buttonGroupTop,
+#stageSelectScreen .buttonGroupBottom {
+  display: flex;
+  flex-direction: column; /* 縦並び */
+  gap: 12px;              /* ボタン間のスペース */
+  max-width: 320px;
+  margin: 0 auto;         /* 中央寄せ */
+  width: 100%;
+}
+
+#stageSelectScreen button {
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #stageSelectScreen .buttonGroupTop,
+  #stageSelectScreen .buttonGroupBottom {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  #stageSelectScreen button {
+    font-size: 14px;
+  }
+}

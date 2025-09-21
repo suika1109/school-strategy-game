@@ -32,24 +32,30 @@
     <div id="TutorialScreen" class="screen" style="display:none;">
         <h2>遊び方</h2>
         <div class="block">
-        <h5><目的></h5>
-        <p>このゲームは進級を重ねて２６ステージ目をクリアすることが目的です。
-        <br>先生のHPを０にするとステージクリアとなり、単位のHPが０になると敗北となります。
-        <br>５つのステージ全てに挑戦すると次の５ステージが解放されます。
-        <br>５ステージのうち２つ以上クリアできなかった場合ゲームオーバーになります。
-        </p>
+            <h5>
+                <目的>
+            </h5>
+            <p>このゲームは進級を重ねて２６ステージ目をクリアすることが目的です。
+                <br>先生のHPを０にするとステージクリアとなり、単位のHPが０になると敗北となります。
+                <br>５つのステージ全てに挑戦すると次の５ステージが解放されます。
+                <br>５ステージのうち２つ以上クリアできなかった場合ゲームオーバーになります。
+            </p>
         </div>
         <div class="block">
-        <h5><強化画面></h5>
-        <p>経験値を使うことで駒のランクアップやステータスの強化、
-        <br>同じランクの別の駒への変更が行えます。
-        </p>
+            <h5>
+                <強化画面>
+            </h5>
+            <p>経験値を使うことで駒のランクアップやステータスの強化、
+                <br>同じランクの別の駒への変更が行えます。
+            </p>
         </div>
         <div class="block">
-        <h5><カスタマイズ画面></h5>
-        <p>自分の駒の初期配置を変更できます。
-        <br>単位の位置は変えることができません。
-        </p>   
+            <h5>
+                <カスタマイズ画面>
+            </h5>
+            <p>自分の駒の初期配置を変更できます。
+                <br>単位の位置は変えることができません。
+            </p>
         </div>
         <button class="btn goTostartScreen" onclick="goTostartScreen()">タイトル画面へ</button>
     </div>
@@ -60,9 +66,11 @@
         <button class="savebutton" onclick="goToSaveScreen()">セーブ</button>
         <button class="loadbutton" onclick="goToLoadScreen()">ロード</button>
         <div class="stageSelect"></div>
-        <button class="btn goTostartScreen button3 expuse" onclick="goToUpgrade()">強化する</button>
-        <button class="btn goTostartScreen button1 start" onclick="goTostartScreen()">タイトル画面へ</button>
-        <button class="btn goToCustomizeScreen button2 custombtn" onclick="goToCustomizeScreen()">カスタマイズ画面へ</button>
+        <div class="buttonGroupBottom">
+            <button class="btn goTostartScreen button3 expuse" onclick="goToUpgrade()">強化する</button>
+            <button class="btn goTostartScreen button1 start" onclick="goTostartScreen()">タイトル画面へ</button>
+            <button class="btn goToCustomizeScreen button2 custombtn" onclick="goToCustomizeScreen()">カスタマイズ画面へ</button>
+        </div>
     </div>
 
     <!-- ゲーム画面 -->
