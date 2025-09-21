@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>将棋ライクゲーム</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="game.css">
+    <audio id="healSound" src="回復魔法1.mp3" preload="auto"></audio>
+    <audio id="buffSound" src="スピードアップ.mp3" preload="auto"></audio>
+</head>
+
+<body>
+    <!-- タイトル画面 -->
+    <div id="startScreen" class="screen">
+        <div class="start">
+            <h1>進級を賭けた戦い</h1>
+            <div class="startmenu">
+                <button class="btn start" id="StartBtn" onclick="Newgame()">はじめから</button>
+                <button class="btn start" id="ContinueBtn" onclick="Continue()">つづきから</button>
+                <button class="btn goToTutorialScreen" onclick="goToTutorialScreen()">遊び方</button>
+            </div>
+        </div>
+        <footer>
+            <P>bgm:魔王魂</P>
+        </footer>
+
+    </div>
+
+    <!-- 遊び方画面 -->
+    <div id="TutorialScreen" class="screen" style="display:none;">
+        <h2>遊び方</h2>
+        <div class="block">
+        <h5><目的></h5>
+        <p>このゲームは進級を重ねて２６ステージ目をクリアすることが目的です。
+        <br>先生のHPを０にするとステージクリアとなり、単位のHPが０になると敗北となります。
+        <br>５つのステージ全てに挑戦すると次の５ステージが解放されます。
+        <br>５ステージのうち２つ以上クリアできなかった場合ゲームオーバーになります。
+        </p>
+        </div>
+        <div class="block">
+        <h5><強化画面></h5>
+        <p>経験値を使うことで駒のランクアップやステータスの強化、
+        <br>同じランクの別の駒への変更が行えます。
+        </p>
+        </div>
+        <div class="block">
+        <h5><カスタマイズ画面></h5>
+        <p>自分の駒の初期配置を変更できます。
+        <br>単位の位置は変えることができません。
+        </p>   
+        </div>
+        <button class="btn goTostartScreen" onclick="goTostartScreen()">タイトル画面へ</button>
+    </div>
+
+    <!-- ステージ選択画面 -->
+    <div id="stageSelectScreen" class="screen" style="display:none;">
+        <h2>履修選択</h2>
+        <button class="savebutton" onclick="goToSaveScreen()">セーブ</button>
+        <button class="loadbutton" onclick="goToLoadScreen()">ロード</button>
+        <div class="stageSelect"></div>
+        <button class="btn goTostartScreen button3 expuse" onclick="goToUpgrade()">強化する</button>
+        <button class="btn goTostartScreen button1 start" onclick="goTostartScreen()">タイトル画面へ</button>
+        <button class="btn goToCustomizeScreen button2 custombtn" onclick="goToCustomizeScreen()">カスタマイズ画面へ</button>
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="gameScreen" class="screen" style="display:none;">
+        <div class="customizebody">
+            <div id="turnDisplay" style="font-size: 18px; color: black;">ターン: 1</div>
+            <div class="customizecontainer">
+
+                <div class="UI">
+                    <div class="pInfo">
+                        <div id="pieceInfo" style="margin-bottom: 12px;"></div>
+                    </div>
+                </div>
+
+                <canvas id="gameCanvas" width="540" height="540"></canvas>
+
+                <div class="UI">
+                    <div id="moveInfo" class="mInfo"
+                        style="background: #f4f4f4; border: 1px solid #ccc; padding: 10px;">
+                        <h4>＜駒の動き＞</h4>
+                        <div id="moveGrid" class="mGrid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="passbutton" onclick="pass()">パス</button>
+        <button class="touryoubutton" onclick="touryou()">投了</button>
+
+    </div>
+    <!-- 経験値消費画面 -->
+    <div id="expUseScreen" class="screen customizebody" style="display: none;">
+        <h2>経験値の使い道を選んでください</h2>
+        <div class="expusebox">
+            <button onclick="showRankupScreen(1)" class="btn expuse1">ランクアップ1<br>EXP：５０</button>
+            <button onclick="showRankupScreen(2)" class="btn expuse2">ランクアップ2<br>EXP：１０００</button>
+            <button onclick="showRankupScreen(3)" class="btn expuse3">ランクアップ3<br>EXP：１００００</button>
+            <button onclick="showStatusBoostScreen()" class="btn expuse4">ステータス強化<br>EXP：１００～５０００</button>
+            <button onclick="showChangePieceScreen()" class="btn expuse5">駒の変更<br>EXP：２００</button>
+            <button onclick="goToStageSelect()" class="btn">戻る</button>
+        </div>
+    </div>
+
+    <!-- ステータス強化画面 -->
+    <div id="statusBoostScreen" class="screen customizebody" style="display: none;">
+        <h2>ステータス強化</h2>
+        <p style="color: black;">強化する駒を選択してください</p>
+
+        <div class="customizecontainer statusBoostcontainer">
+            <div class="UI">
+                <div id="statusBoostPieceInfo" class="pnIfo"></div>
+            </div>
+            <div id="statusBoostPiecesContainer"></div>
+            <div class="UI">
+                <div id="statusBoostmoveInfo" class="mInfo"
+                    style="background: #f4f4f4; border: 1px solid #ccc; padding: 10px;">
+                    <h4>＜駒の動き＞</h4>
+                    <div id="statusBoostmoveGrid" class="mGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="statusBoostOptions" style="display: none;">
+            <h3 style="color: black;">どのステータスを強化しますか？</h3>
+            <button id="boostHP" class="btn statusBoost1">HP +1<br>EXP：１００</button>
+            <button id="boostATK" class="btn statusBoost2">攻撃 +1<br>EXP：５００</button>
+            <button id="boostDEF" class="btn statusBoost3">防御 +1<br>EXP：５０００</button>
+        </div>
+
+        <button onclick="goToUpgrade()" class="btn">戻る</button>
+    </div>
+    <!-- ランクアップ画面 -->
+    <div id="rankupScreen" class="screen customizebody" style="display: none;">
+        <h2 id="rankuptitle1" style="display: none;">ランクアップ</h2>
+        <h2 id="rankuptitle2" style="display: none;">駒を変更する</h2>
+        <p id="rankupP1">ランクアップする駒を選択してください</p>
+        <p id="rankupP2">どの駒をランクアップするか選択してください</p>
+        <p id="rankupP3">変更する駒を選択してください</p>
+        <p id="rankupP4">どの駒を変更するか選択してください</p>
+
+
+        <!-- ↓ ラッパー追加 -->
+        <div class="customizecontainer">
+            <div class="UI">
+                <div class="pInfo">
+                    <div id="selectedPieceInfo"></div>
+                </div>
+            </div>
+
+            <div id="playerPiecesContainer"></div>
+
+            <div class="UI">
+                <div id="selectedmoveInfo" class="mInfo"
+                    style="background: #f4f4f4; border: 1px solid #ccc; padding: 10px;">
+                    <h4>＜駒の動き＞</h4>
+                    <div id="moveGrid1" class="mGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="showUpgradeCandidatesBtn1" onclick="showUpgradeCandidates(1)" style="display: none;"
+            class="btn rankup1">
+            この駒をランクアップ
+        </button>
+        <button id="showUpgradeCandidatesBtn2" onclick="showUpgradeCandidates(0)" style="display: none;"
+            class="btn rankup1">
+            この駒を変更する
+        </button>
+
+        <div class="customizecontainer">
+            <div class="UI">
+                <div class="pInfo">
+                    <div id="selectedCandidateInfo"></div>
+                </div>
+            </div>
+
+            <div id="rankupCandidatesContainer" style="display: none;"></div>
+
+            <div class="UI">
+                <div id="selectedCandidatemoveInfo" class="mInfo"
+                    style="background: #f4f4f4; border: 1px solid #ccc; padding: 10px;">
+                    <h4>＜駒の動き＞</h4>
+                    <div id="moveGrid2" class="mGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="confirmRankupBtn" onclick="confirmRankup()" style="display: none;" class="btn rankup2">
+            この駒に決定
+        </button>
+    </div>
+
+
+
+
+
+    <!-- セーブ画面 -->
+    <div id="saveScreen" class="screen" style="display: none;">
+        <h2>セーブスロット選択</h2>
+        <div class="slot-container">
+            <button class="btn slot" id="saveSlot1" onclick="saveToSlot(1)">スロット1</button>
+            <button class="btn slot" id="saveSlot2" onclick="saveToSlot(2)">スロット2</button>
+            <button class="btn slot" id="saveSlot3" onclick="saveToSlot(3)">スロット3</button>
+
+        </div>
+        <button class="btn" onclick="backToGame()">戻る</button>
+    </div>
+
+    <!-- ロード画面の例 -->
+    <div id="loadScreen" class="screen" style="display: none;">
+        <h2>ロードスロット選択</h2>
+        <div class="slot-container">
+            <button class="btn slot" id="loadSlot1" onclick="LoadFromSlot(1)">スロット1</button>
+            <button class="btn slot" id="loadSlot2" onclick="LoadFromSlot(2)">スロット2</button>
+            <button class="btn slot" id="loadSlot3" onclick="LoadFromSlot(3)">スロット3</button>
+        </div>
+        <button class="btn" onclick="backToGameFromLoad()">戻る</button>
+    </div>
+    <!-- ゲームオーバー画面 -->
+    <div id="gameOverScreen" style="display:none;">
+        <h2>ゲームオーバー</h2>
+        <p>3つ以上クリアできなかったため、終了です。</p>
+        <button onclick="goToStageSelect()">ステージ選択へ戻る</button>
+    </div>
+
+    <!-- カスタマイズ画面 -->
+    <div id="customizeScreen" style="display: none;">
+        <div class="customizebody">
+            <h2>初期配置をカスタマイズ</h2>
+            <div class="customizecontainer">
+                <div class="UI">
+                    <div class="pInfo">
+                        <div id="custompieceInfo" style="margin-bottom: 12px;">
+                        </div>
+                    </div>
+                </div>
+
+                <canvas id="customCanvas" width="540" height="540"></canvas>
+
+                <div class="UI">
+                    <div id="custommoveInfo" class="mInfo" style="background-color:white; padding: 10px;">
+                        <h4>＜駒の動き＞</h4>
+                        <div id="custommoveGrid" class="mGrid"></div>
+                    </div>
+                    <button class="btn custom" onclick="saveCustomSetup()">この配置で決定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="exp-display" style="display: none;">EXP : 0</div>
+
+    <!-- 通知エリア（bodyの最後などに追加） -->
+    <div id="alertBox" class="custom-alert" style="display: none;"></div>
+    <!-- 背景をブロックする半透明オーバーレイ -->
+    <div id="impactOverlay">
+        <div id="impactMessage"></div>
+    </div>
+
+
+    <script src="game.js"></script>
+</body>
+
+
+</html>
