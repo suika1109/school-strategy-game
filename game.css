@@ -1,37 +1,4 @@
 
-@media (max-width: 768px) {
-    .UI {
-        width: 100%;
-    }
-
-    .mGrid {
-        grid-template-columns: repeat(9, 1fr);
-    }
-
-    #pieceInfo, #moveInfo,
-    #selectedPieceInfo, #selectedmoveInfo,
-    #statusBoostPieceInfo, #statusBoostmoveInfo {
-        min-width: 100%;
-    }
-
-    .customizecontainer {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    h1 {
-        font-size: 48px;
-        height: auto;
-    }
-
-    .btn.stage {
-        min-width: 100%;
-    }
-}
-
-
-
-
 /* =============================
    基本レイアウトと全体設定
 ============================= */
@@ -750,4 +717,34 @@ canvas {
 .block h5 {
     color: #007bff;
     font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .UI {
+        width: 100%;
+    }
+
+    .mGrid {
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+    #pieceInfo, #moveInfo,
+    #selectedPieceInfo, #selectedmoveInfo,
+    #statusBoostPieceInfo, #statusBoostmoveInfo {
+        min-width: 100%;
+    }
+
+    .customizecontainer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    h1 {
+        font-size: 48px;
+        height: auto;
+    }
+
+    .btn.stage {
+        min-width: 100%;
+    }
 }
