@@ -7,7 +7,7 @@ const customctx = customcanvas.getContext("2d");
 const StartBtn = document.getElementById("StartBtn");
 const ContinueBtn = document.getElementById("ContinueBtn");
 
-const attackSound = new Audio("/剣で斬る2.mp3");
+const attackSound = new Audio("ken.mp3");
 // グローバルスコープで画像を定義
 const ps4IconImage = new Image();
 ps4IconImage.src = "ps4.avif"; // 後で正しいパスに変更
