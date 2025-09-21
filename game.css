@@ -1,3 +1,22 @@
+
+@media (max-width: 768px) {
+    .container, .customizecontainer {
+        flex-direction: column;
+    }
+
+    .btn.stage {
+        min-width: 90%;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+
 /* =============================
    基本レイアウトと全体設定
 ============================= */
