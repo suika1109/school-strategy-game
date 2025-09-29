@@ -2565,6 +2565,22 @@ function checkKingDefeatedAfterTurn() {
             ) {
                 player2KingAlive = true;
             }
+
+            if (
+                (piece.type === PieceType.Teachermove11) &&
+                piece.hp > 0
+            ) {
+                player2KingAlive = true;
+            }
+
+            if (
+                (piece.type === PieceType.Teachermove12) &&
+                piece.hp > 0
+            ) {
+                player2KingAlive = true;
+            }
+
+
         }
     }
 
@@ -5708,7 +5724,7 @@ function boostATK(pieceName) {
     }
 
     playerUpgrades[pieceName].atk = (playerUpgrades[pieceName].atk || 0) + 1;
-    exp -= 300;
+    exp -= 500;
 
     showAlert(`${pieceName} の 攻撃力 を強化しました！`);
     autosave();
@@ -5725,7 +5741,7 @@ function boostDEF(pieceName) {
     }
 
     playerUpgrades[pieceName].def = (playerUpgrades[pieceName].def || 0) + 1;
-    exp -= 1000;
+    exp -= 5000;
 
     showAlert(`${pieceName} の 防御力 を強化しました！`);
     autosave();
