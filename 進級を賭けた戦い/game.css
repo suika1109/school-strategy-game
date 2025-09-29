@@ -1,0 +1,773 @@
+
+/* =============================
+   基本レイアウトと全体設定
+============================= */
+body {
+    background-image: url("26680078.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 70%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+    animation: driftPattern 80s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes driftPattern {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 800px 800px;
+    }
+}
+
+/* =============================
+   汎用レイアウト
+============================= */
+.screen {
+    text-align: center;
+    padding: 20px 50px 0;
+}
+
+.outer-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* =============================
+   タイトル・ヘッダー・フッター
+============================= */
+h1 {
+    color: #222;
+    font-size: 86px;
+    height: 300px;
+}
+
+h2 {
+    color: #222;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+h4 {
+    color: #111;
+    text-align: center;
+}
+
+footer {
+    text-align: right;
+    height: 12px;
+}
+
+footer p {
+    font-size: 12px;
+}
+
+.startmenu,
+.stageSelect {
+    display: flex;
+    flex-direction: column;
+    /* 縦並びにする */
+    align-items: center;
+    /* 中央揃え */
+    gap: 20px;
+    /* ボタンの間隔 */
+    margin-bottom: 180px;
+}
+
+/* =============================
+   ボタンスタイル
+============================= */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgb(14, 0, 0);
+    font-family: 'Segoe UI', sans-serif;
+
+    min-width: 200px;
+    /* 横幅を揃える */
+    text-align: center;
+    /* テキスト中央 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 立体感 */
+    border: 1px solid #abaeb0;
+}
+
+.button1 {
+    position: fixed;
+    right: 20px;
+    /* 画面右端からの距離 */
+    bottom: 90px;
+    /* 画面下端からの距離 */
+    z-index: 1000;
+    /* 他の要素より前に出す */
+    border: 1px solid #417191;
+}
+
+.button2 {
+    position: fixed;
+    right: 20px;
+    /* 画面右端からの距離 */
+    bottom: 20px;
+    /* 画面下端からの距離 */
+    z-index: 1000;
+    /* 他の要素より前に出す */
+    border: 1px solid #abaeb0;
+}
+
+.button3 {
+    position: fixed;
+    right: 20px;
+    /* 画面右端からの距離 */
+    bottom: 160px;
+    /* 画面下端からの距離 */
+    z-index: 1000;
+    /* 他の要素より前に出す */
+    border: 1px solid #778544;
+}
+
+.savebutton {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(0, 255, 255, 1);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    left: 20px;
+    /* 画面右端からの距離 */
+    bottom: 90px;
+    /* 画面下端からの距離 */
+    z-index: 1000;
+    /* 他の要素より前に出す */
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    transition: 0.3s;
+}
+
+.loadbutton {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgba(173, 255, 47, 1);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    left: 20px;
+    /* 画面右端からの距離 */
+    bottom: 20px;
+    /* 画面下端からの距離 */
+    z-index: 1000;
+    /* 他の要素より前に出す */
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    transition: 0.3s;
+}
+
+.passbutton {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 0, 0, 1);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    left: 20px;
+    /* 画面右端からの距離 */
+    bottom: 90px;
+    /* 画面下端からの距離 */
+    z-index: 1000;
+    /* 他の要素より前に出す */
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    transition: 0.3s;
+}
+
+.touryoubutton {
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(0, 0, 255, 1);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    left: 20px;
+    /* 画面右端からの距離 */
+    bottom: 30px;
+    /* 画面下端からの距離 */
+    z-index: 1000;
+    /* 他の要素より前に出す */
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    transition: 0.3s;
+}
+
+.passbutton:hover {
+    color: rgba(255, 0, 0, 0.8);
+}
+
+.touryoubutton:hover {
+    color: rgba(0, 0, 255, 0.8);
+}
+
+.savebutton:hover {
+    color: rgba(0, 255, 255, 0.8);
+}
+
+.loadbutton:hover {
+    color: rgba(173, 255, 47, 0.8);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    /* 少し上に浮く */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* 影を強調 */
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn.start {
+    background-color: #007bff;
+}
+
+.btn.start:hover {
+    background-color: #0056b3;
+}
+
+.btn.custombtn {
+    background-color: rgba(169, 169, 169, 1);
+}
+
+.btn.custombtn:hover {
+    background-color: rgb(124, 124, 124);
+}
+
+.btn.expuse {
+    background-color: #b99015;
+}
+
+.btn.expuse:hover {
+    background-color: #827010;
+}
+
+.btn.stage {
+    padding: 18px 24px;
+    min-width: 600px;
+}
+
+.btn.slot {
+    background-color: #dce1e1;
+}
+
+.btn.rankup1 {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.btn.rankup1:hover {
+    background-color: #5936a6;
+}
+
+.btn.rankup2 {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.btn.rankup2:hover {
+    background-color: #5936a6;
+}
+
+.btn.statusBoost1 {
+    background-color: rgba(0, 255, 85, 0.8);
+}
+
+.btn.statusBoost1:hover {
+    background-color: rgb(1, 150, 51);
+}
+
+.btn.statusBoost2 {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.btn.statusBoost2:hover {
+    background-color: rgb(176, 2, 2);
+}
+
+.btn.statusBoost3 {
+    background-color: rgba(0, 0, 255, 0.8);
+}
+
+.btn.statusBoost3:hover {
+    background-color: rgb(1, 1, 161);
+}
+
+
+/* =============================
+   セーブ・ロード画面
+============================= */
+.savedata {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.slot-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px auto;
+    max-width: 200px;
+}
+
+/* =============================
+   ゲーム画面
+============================= */
+canvas {
+    margin-top: 20px;
+    border: 1px solid black;
+    background: linear-gradient(145deg, #222, #111);
+}
+
+.UI {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 220px;
+    align-items: center;
+    gap: 20px;
+}
+
+/* 駒の情報表示 */
+.pnIfo {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    font-family: "Segoe UI", "Roboto", sans-serif;
+    font-size: 15px;
+    color: #333;
+    text-align: left;
+    transition: all 0.3s ease;
+    width: 158px;
+    margin: 6px auto;
+    /* ← 横方向を中央にする */
+}
+
+.pnIfo h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.pnIfo p {
+    margin: 0;
+    line-height: 1.4;
+    white-space: pre-line;
+}
+
+#pieceInfo {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #222;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    min-width: 200px;
+    min-height: 300px;
+    text-align: left;
+}
+
+/* =============================
+   駒の動きのグリッド
+============================= */
+.mGrid {
+    display: grid;
+    gap: 2px;
+    margin: 6px auto;
+    justify-content: center;
+    grid-template-columns: repeat(9, 20px);
+    /* 横幅を20pxずつに */
+    gap: 1px;
+    /* セル間の間隔を小さめに */
+}
+
+.cell {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #aaa;
+    text-align: center;
+    font-size: 12px;
+    /* 文字サイズも調整 */
+    line-height: 20px;
+    /* 高さに合わせて中央揃え */
+    box-sizing: border-box;
+}
+
+.center {
+    background-color: #bbb;
+}
+
+.move {
+    background-color: #8f8;
+}
+
+/* =============================
+   通知設定
+============================= */
+.custom-alert {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: #fffdfd;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 20px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.4s ease, top 0.4s ease;
+}
+
+.custom-alert.show {
+    display: block;
+    opacity: 1;
+    top: 40px;
+}
+
+/* =============================
+   カスタマイズ画面全体
+============================= */
+.customizebody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.customizecontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* 追加！ */
+    gap: 30px;
+}
+
+#custompieceInfo {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #222;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    min-width: 200px;
+    min-height: 300px;
+}
+
+#custommoveInfo {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #222;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+/* =============================
+   ランクアップ画面用スタイル
+============================= */
+#rankupScreen>p {
+    color: #111;
+}
+
+#selectedPieceInfo,
+#statusBoostPieceInfo {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #222;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    min-width: 200px;
+    min-height: 300px;
+    text-align: left;
+    /* 追加推奨 */
+    height: auto;
+    /* ← 高さを自動にする */
+    overflow: visible;
+    /* ← はみ出しも表示されるように */
+}
+
+#selectedmoveInfo,
+#statusBoostmoveInfo {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #222;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+#selectedCandidateInfo {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #222;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    min-width: 200px;
+    min-height: 300px;
+    text-align: left;
+}
+
+#selectedCandidatemoveInfo {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #222;
+    color: white;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #444;
+}
+
+#playerPiecesContainer {
+    display: flex;
+    align-items: center;
+}
+
+#exp-display {
+    position: fixed;
+    top: 10px;
+    /* 上からの距離 */
+    right: 10px;
+    /* ← 右上表示。左上にしたいなら right を left に */
+    color: rgb(12, 87, 194);
+    font-size: 30px;
+    padding: 8px 12px;
+    z-index: 9999;
+    /* 前面に出す */
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.expusebox {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px auto;
+    max-width: 300px;
+}
+
+.expuse1 {
+    background-color: #f8f7f7ff;
+    border: 1px solid #2C6A93;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.expuse2 {
+    background: linear-gradient(to bottom, #E5B07E, #C47222, #8B4513);
+    border: 1px solid #2C6A93;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.expuse3 {
+    background: linear-gradient(to bottom, #eeeeee, #aaaaaa);
+    border: 1px solid #2C6A93;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.expuse4 {
+    background: linear-gradient(to bottom, #F8C0C0, #E64545, #B22222);
+    /* 明るい赤 → 深い赤 */
+    border: 1px solid #2C6A93;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.expuse5 {
+    background: linear-gradient(to bottom, #D0ECFF, #70B7E0, #4682B4);
+    border: 1px solid #2C6A93;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#statusBoostmoveGrid {
+    display: grid;
+    grid-template-columns: repeat(9, 20px);
+    /* 横幅を20pxずつに */
+    gap: 1px;
+    /* セル間の間隔を小さめに */
+}
+
+.statusBoostcontainer {
+    height: 300px;
+}
+
+#statusBoostOptions {
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+#impactOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* うっすら黒背景 */
+    display: none;
+    /* 初期は非表示 */
+    z-index: 9999;
+    pointer-events: auto;
+    /* 背後のクリックブロック */
+}
+
+#impactOverlay.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#impactMessage {
+    font-size: 80px;
+    font-family: "New Tegomin";
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+    opacity: 0;
+    transform: scale(1);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+#impactMessage.show {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+#TutorialScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.block {
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.block h5 {
+    color: #007bff;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .UI {
+        width: 100%;
+    }
+
+    .mGrid {
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+    #pieceInfo, #moveInfo,
+    #selectedPieceInfo, #selectedmoveInfo,
+    #statusBoostPieceInfo, #statusBoostmoveInfo {
+        min-width: 100%;
+    }
+
+    .customizecontainer {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    h1 {
+        font-size: 48px;
+        height: auto;
+    }
+
+    .btn.stage {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    canvas {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .mGrid {
+        grid-template-columns: repeat(9, 1fr);
+        max-width: 100%;
+        margin: 0 auto;
+        gap: 1px;
+    }
+
+    .cell {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        font-size: 10px;
+        line-height: 1;
+    }
+}
