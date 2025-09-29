@@ -548,53 +548,53 @@ const TypeStats = {
     Lys: { hp: 5, atk: 2, def: 0, rank: 0, exp: 50, maxhp: 10 },
     Met: { hp: 5, atk: 2, def: 0, rank: 0, exp: 50, maxhp: 10 },
     Miss: { hp: 5, atk: 2, def: 1, rank: 0, exp: 5, maxhp: 5 },
-    Report: { hp: 12, atk: 3, def: 1, rank: 0, exp: 100, maxhp: 12 },
-    SS: { hp: 15, atk: 5, def: 1, rank: 0, exp: 200, maxhp: 15 },
-    SR: { hp: 25, atk: 3, def: 3, rank: 0, exp: 200, maxhp: 25 },
-    Kasa: { hp: 10, atk: 7, def: 2, rank: 0, exp: 300, maxhp: 10 },
-    Hako: { hp: 15, atk: 3, def: 5, rank: 0, exp: 300, maxhp: 20 },
-    Gs: { hp: 15, atk: 0, def: 5, rank: 0, exp: 100, maxhp: 15 },
-    Gi: { hp: 15, atk: 0, def: 0, rank: 0, exp: 100, maxhp: 15 },
-    Gq: { hp: 15, atk: 0, def: 5, rank: 0, exp: 100, maxhp: 15 },
-    PKA: { hp: 8, atk: 10, def: 2, rank: 0, exp: 10, maxhp: 8 },
-    PKC: { hp: 10, atk: 5, def: 3, rank: 0, exp: 10, maxhp: 10 },
-    Bannsyo2: { hp: 10, atk: 5, def: 3, rank: 0, exp: 100, maxhp: 10 },
-    LMS3: { hp: 5, atk: 5, def: 2, rank: 0, exp: 100, maxhp: 5 },
-    VD: { hp: 15, atk: 12, def: 8, rank: 0, exp: 800, maxhp: 15 },
-    VA: { hp: 15, atk: 12, def: 8, rank: 0, exp: 800, maxhp: 15 },
-    VK: { hp: 15, atk: 12, def: 8, rank: 0, exp: 800, maxhp: 15 },
-    VE: { hp: 15, atk: 12, def: 8, rank: 0, exp: 800, maxhp: 15 },
-    VB1: { hp: 10, atk: 6, def: 5, rank: 0, exp: 300, maxhp: 10 },
-    VB2: { hp: 10, atk: 6, def: 5, rank: 0, exp: 300, maxhp: 10 },
-    VB3: { hp: 10, atk: 6, def: 5, rank: 0, exp: 300, maxhp: 10 },
-    VB5: { hp: 10, atk: 6, def: 5, rank: 0, exp: 300, maxhp: 10 },
-    VB6: { hp: 10, atk: 6, def: 5, rank: 0, exp: 300, maxhp: 10 },
-    VB7: { hp: 10, atk: 6, def: 5, rank: 0, exp: 300, maxhp: 10 },
-    VB9: { hp: 10, atk: 6, def: 5, rank: 0, exp: 300, maxhp: 10 },
-    VB12: { hp: 10, atk: 6, def: 5, rank: 0, exp: 300, maxhp: 10 },
-    S1: { hp: 20, atk: 12, def: 6, rank: 0, exp: 500, maxhp: 20 },
-    S2: { hp: 20, atk: 12, def: 6, rank: 0, exp: 500, maxhp: 20 },
-    S3: { hp: 20, atk: 12, def: 6, rank: 0, exp: 500, maxhp: 20 },
-    S4: { hp: 20, atk: 12, def: 6, rank: 0, exp: 500, maxhp: 20 },
-    Dennsi: { hp: 5, atk: 12, def: 3, rank: 0, exp: 50, maxhp: 5 },
-    Koukinnyaku: { hp: 15, atk: 12, def: 5, rank: 0, exp: 300, maxhp: 15 },
-    Kouuirusuyaku: { hp: 20, atk: 8, def: 3, rank: 0, exp: 300, maxhp: 20 },
-    Sou: { hp: 15, atk: 20, def: 0, rank: 0, exp: 500, maxhp: 15 },
-    Utu: { hp: 20, atk: 8, def: 8, rank: 0, exp: 500, maxhp: 20 },
-    Monndai: { hp: 50, atk: 15, def: 0, rank: 0, exp: 500, maxhp: 50 },
-    Menneki: { hp: 25, atk: 20, def: 8, rank: 0, exp: 1000, maxhp: 25 },
-    Toukei: { hp: 25, atk: 15, def: 10, rank: 0, exp: 1000, maxhp: 25 },
-    LMS4: { hp: 10, atk: 5, def: 3, rank: 0, exp: 500, maxhp: 30 },
-    S11: { hp: 40, atk: 20, def: 10, rank: 0, exp: 1500, maxhp: 40 },
-    S12: { hp: 40, atk: 20, def: 10, rank: 0, exp: 1500, maxhp: 40 },
-    S13: { hp: 40, atk: 20, def: 10, rank: 0, exp: 1500, maxhp: 40 },
-    S14: { hp: 40, atk: 20, def: 10, rank: 0, exp: 1500, maxhp: 40 },
-    Ia: { hp: 30, atk: 15, def: 7, rank: 0, exp: 1500, maxhp: 30 },
-    Ib: { hp: 30, atk: 15, def: 7, rank: 0, exp: 1500, maxhp: 30 },
-    Ic: { hp: 30, atk: 15, def: 7, rank: 0, exp: 1500, maxhp: 30 },
-    II: { hp: 30, atk: 15, def: 7, rank: 0, exp: 1500, maxhp: 30 },
-    III: { hp: 30, atk: 15, def: 7, rank: 0, exp: 1500, maxhp: 30 },
-    IV: { hp: 30, atk: 15, def: 7, rank: 0, exp: 1500, maxhp: 30 },
+    Report: { hp: 12, atk: 3, def: 1, rank: 0, exp: 500, maxhp: 12 },
+    SS: { hp: 15, atk: 5, def: 1, rank: 0, exp: 300, maxhp: 15 },
+    SR: { hp: 25, atk: 3, def: 3, rank: 0, exp: 300, maxhp: 25 },
+    Kasa: { hp: 10, atk: 7, def: 2, rank: 0, exp: 500, maxhp: 10 },
+    Hako: { hp: 15, atk: 3, def: 5, rank: 0, exp: 500, maxhp: 20 },
+    Gs: { hp: 15, atk: 0, def: 5, rank: 0, exp: 500, maxhp: 15 },
+    Gi: { hp: 15, atk: 0, def: 0, rank: 0, exp: 500, maxhp: 15 },
+    Gq: { hp: 15, atk: 0, def: 5, rank: 0, exp: 500, maxhp: 15 },
+    PKA: { hp: 8, atk: 10, def: 2, rank: 0, exp: 100, maxhp: 8 },
+    PKC: { hp: 10, atk: 5, def: 3, rank: 0, exp: 100, maxhp: 10 },
+    Bannsyo2: { hp: 10, atk: 5, def: 3, rank: 0, exp: 500, maxhp: 10 },
+    LMS3: { hp: 5, atk: 5, def: 2, rank: 0, exp: 500, maxhp: 5 },
+    VD: { hp: 15, atk: 12, def: 8, rank: 0, exp: 1000, maxhp: 15 },
+    VA: { hp: 15, atk: 12, def: 8, rank: 0, exp: 1000, maxhp: 15 },
+    VK: { hp: 15, atk: 12, def: 8, rank: 0, exp: 1000, maxhp: 15 },
+    VE: { hp: 15, atk: 12, def: 8, rank: 0, exp: 1000, maxhp: 15 },
+    VB1: { hp: 10, atk: 6, def: 5, rank: 0, exp: 1000, maxhp: 10 },
+    VB2: { hp: 10, atk: 6, def: 5, rank: 0, exp: 1000, maxhp: 10 },
+    VB3: { hp: 10, atk: 6, def: 5, rank: 0, exp: 1000, maxhp: 10 },
+    VB5: { hp: 10, atk: 6, def: 5, rank: 0, exp: 1000, maxhp: 10 },
+    VB6: { hp: 10, atk: 6, def: 5, rank: 0, exp: 1000, maxhp: 10 },
+    VB7: { hp: 10, atk: 6, def: 5, rank: 0, exp: 1000, maxhp: 10 },
+    VB9: { hp: 10, atk: 6, def: 5, rank: 0, exp: 1000, maxhp: 10 },
+    VB12: { hp: 10, atk: 6, def: 5, rank: 0, exp: 1000, maxhp: 10 },
+    S1: { hp: 20, atk: 12, def: 6, rank: 0, exp: 2000, maxhp: 20 },
+    S2: { hp: 20, atk: 12, def: 6, rank: 0, exp: 2000, maxhp: 20 },
+    S3: { hp: 20, atk: 12, def: 6, rank: 0, exp: 2000, maxhp: 20 },
+    S4: { hp: 20, atk: 12, def: 6, rank: 0, exp: 2000, maxhp: 20 },
+    Dennsi: { hp: 5, atk: 12, def: 3, rank: 0, exp: 200, maxhp: 5 },
+    Koukinnyaku: { hp: 15, atk: 12, def: 5, rank: 0, exp: 1000, maxhp: 15 },
+    Kouuirusuyaku: { hp: 20, atk: 8, def: 3, rank: 0, exp: 1000, maxhp: 20 },
+    Sou: { hp: 15, atk: 20, def: 0, rank: 0, exp: 1500, maxhp: 15 },
+    Utu: { hp: 20, atk: 8, def: 8, rank: 0, exp: 1500, maxhp: 20 },
+    Monndai: { hp: 50, atk: 15, def: 0, rank: 0, exp: 1500, maxhp: 50 },
+    Menneki: { hp: 25, atk: 20, def: 8, rank: 0, exp: 3000, maxhp: 25 },
+    Toukei: { hp: 25, atk: 15, def: 10, rank: 0, exp: 3000, maxhp: 25 },
+    LMS4: { hp: 10, atk: 5, def: 3, rank: 0, exp: 2000, maxhp: 30 },
+    S11: { hp: 40, atk: 20, def: 10, rank: 0, exp: 4000, maxhp: 40 },
+    S12: { hp: 40, atk: 20, def: 10, rank: 0, exp: 4000, maxhp: 40 },
+    S13: { hp: 40, atk: 20, def: 10, rank: 0, exp: 4000, maxhp: 40 },
+    S14: { hp: 40, atk: 20, def: 10, rank: 0, exp: 4000, maxhp: 40 },
+    Ia: { hp: 30, atk: 15, def: 7, rank: 0, exp: 6000, maxhp: 30 },
+    Ib: { hp: 30, atk: 15, def: 7, rank: 0, exp: 6000, maxhp: 30 },
+    Ic: { hp: 30, atk: 15, def: 7, rank: 0, exp: 6000, maxhp: 30 },
+    II: { hp: 30, atk: 15, def: 7, rank: 0, exp: 6000, maxhp: 30 },
+    III: { hp: 30, atk: 15, def: 7, rank: 0, exp: 6000, maxhp: 30 },
+    IV: { hp: 30, atk: 15, def: 7, rank: 0, exp: 6000, maxhp: 30 },
 };
 
 const NameStats = {
@@ -915,7 +915,7 @@ function createPiece(type, player, name = null, backname = null) {
         piece.outline = `
         過去問を配る人。
         過去問の重要性は大学生なら言わずもがな。
-        10の倍数のターン開始時に周囲1マスの味方の攻撃力を1上げる。
+        8の倍数のターン開始時に周囲1マスの味方の攻撃力を1上げる。
         `
     }
 
@@ -3770,27 +3770,27 @@ function onStageClear(stageId) {
     } else if (stageId === 14) {
         exp += 500;
     } else if (stageId === 15) {
-        exp += 1000;
+        exp += 2000;
     } else if (stageId === 16) {
-        exp += 1000;
+        exp += 2000;
     } else if (stageId === 17) {
-        exp += 1000;
-    } else if (stageId === 18) {
-        exp += 2000;
-    } else if (stageId === 19) {
         exp += 3000;
+    } else if (stageId === 18) {
+        exp += 3000;
+    } else if (stageId === 19) {
+        exp += 5000;
     } else if (stageId === 20) {
-        exp += 5000;
+        exp += 10000;
     } else if (stageId === 21) {
-        exp += 2000;
-    } else if (stageId === 22) {
-        exp += 2000;
-    } else if (stageId === 23) {
         exp += 5000;
+    } else if (stageId === 22) {
+        exp += 5000;
+    } else if (stageId === 23) {
+        exp += 8000;
     } else if (stageId === 24) {
-        exp += 10000;
+        exp += 20000;
     } else if (stageId === 25) {
-        exp += 10000;
+        exp += 20000;
     } else if (stageId === 26) {
         exp += 1000000;
         showAlert("ゲームクリア!!");
@@ -3871,6 +3871,7 @@ function initStage(stageId) {
     currentPlayer = 1; // プレイヤー先行
     AI_LEVEL = 1;
     turnCount = 1;
+    stageActCount = 0;
     updateTurnDisplay();
 
     // ステージごとに AI のレベルを設定
